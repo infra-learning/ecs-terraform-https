@@ -1,5 +1,8 @@
 # ecs-terraform-handson
 
+## Architecture
+![Architecture](./img/architecture.png)
+
 ## How to use
 
 `iac_learning`というプロファイルで`aws configure`を実行する。Regionは`ap-northeast-1`にする。
