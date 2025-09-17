@@ -14,9 +14,18 @@ aws configure --profile
 Terraformを実行する。
 
 ```shell
+cd infra
 terraform init
 terraform plan
 terraform apply -auto-approve
+```
+
+イメージをERCにプッシュする。
+
+```shell
+# cd to root dir
+cd ..
+sh push_image.sh
 ```
 
 ## Clean up
