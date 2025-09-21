@@ -14,3 +14,11 @@ variable "region" {
   type    = string
   default = "ap-northeast-1"
 }
+
+variable "domain_name" {
+  type = string
+}
+
+variable "hosted_zone_id" {
+  type = string
+}

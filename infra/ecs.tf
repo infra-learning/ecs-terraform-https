@@ -34,9 +34,17 @@ resource "aws_ecs_service" "app" {
   desired_count   = 1
   launch_type     = "FARGATE"
 
+  load_balancer {
+    target_group_arn = aws_lb_target_group.app.arn
+    container_name = "app"
+    container_port = 80
+  }
+
   network_configuration {
     subnets          = module.vpc.public_subnets
     security_groups  = [aws_security_group.svc.id]
     assign_public_ip = true
   }
+
+  depends_on = [ aws_lb_listener.http, aws_lb_listener.https ]
 }
