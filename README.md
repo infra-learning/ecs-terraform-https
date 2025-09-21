@@ -16,6 +16,25 @@ Terraformを実行する。
 ```shell
 cd infra
 terraform init
+```
+
+```shell
+terraform apply -target=aws_route53_zone.root
+```
+
+```shell
+terraform output ns
+terraform output hosted_zone_id
+```
+
+出力をネームサーバーに設定する。
+hosted_zone_idをterraform.tfvarsに記載する。
+
+```shell
+dig NS <YOUR DOMAIN> +short
+```
+
+```shell
 terraform plan
 terraform apply -auto-approve
 ```
